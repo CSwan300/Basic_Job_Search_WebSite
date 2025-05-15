@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta and stylesheets  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- title of the page  -->
+    <title>Vacancies</title>
+</head>
+
+<body onload="javascript:fetchapi()">
+    <main>
+        <nav>
+            <!-- wrapper for the grid  -->
+            <div class="topnav" id="myTopnav">
+                <button class="navbutton" onclick="document.location='index.html'">Homepage</button>
+                <button class="navbutton" onclick="document.location='takehome.html'">Pay Calculator</button>
+                <button class="active" onclick="document.location='vacancies.html'">Vacancies List</button>
+                <button class="openbtn" onclick="openNav()">&#9776; </button>
+                <img class="img1" src="logo.png" alt="logo">
+            </div>
+            <!-- sidebar  -->
+            <div id="mySidepanel" class="sidepanel">
+                <!-- button to close navbar  -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- links to other webpages  -->
+                <button onclick="document.location='index.html'">Homepage</button>
+                <button onclick="document.location='takehome.html'">Pay Calculator</button>
+
+                <button class="active" onclick="document.location='vacancies.html'">Vacancies List</button>
+
+            </div>
+        </nav>
+        <header>
+            <!-- grid class 2  -->
+            <div class="two">
+                <!-- headeing for the page  -->
+                <!-- sets a top  -->
+                <p id="top"></p>
+                <!-- page description -->
+                <h1>Vacancies</h1>
+
+            </div>
+
+        </header>
+        <div class="wrapper">
+
+            <!-- grid class 2  -->
+            <div class="two">
+                <!-- headeing for the page  -->
+                <!-- sets a top  -->
+                <!-- page description -->
+
+                <hr>
+                <p class="text">Find Your Vacancies Using The Content Below! <a class="text" href="#bottom">Click Here
+                        Go to the bottom</a></p>
+                <hr>
+
+            </div>
+
+            <div class=three>
+                <form id="SearchForm">
+
+                    <div class="row">
+                        <div class="col-25">
+                            <!-- obtains the keyword for the search  -->
+                            <label class=FormLabel for="keyword" >Keyword</label>
+
+                        </div>
+
+                        <div class="col-75">
+                            <input type="text" id="keyword" placeholder="Keyword" minlength="1" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <!-- obtains the location they want to search  -->
+                            <label class=FormLabel for="location">Location (Leave Blank For Any)</label>
+                        </div>
+                        <div class="col-75">
+                            <select id="location">
+                                <option value="N/A"></option>
+                                <option value="London">London</option>
+                                <option value="Manchester">Manchester</option>
+                                <option value="Birmingham">Birmingham</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr class=post_line>
+
+                </form>
+                <hr class=post_line>
+                <button type="button" class="btnvac" onclick="userapi()">Search</button>
+
+                <!-- The form -->
+
+
+
+<!-- list of all posts  -->
+                <hr class=post_line>
+
+<!-- title  -->
+                <h4>Vacancies</h4>
+                <section id="postlist">
+                    <!-- temp title for when the function is gathering details  -->
+                    <h4>Please Wait</h4>
+
+                </section>
+                <hr>
+                <template>
+                    <!-- easch post is generated on one of these  -->
+                    <div class="post">
+                        <hr class="post_line">
+                        <span class="post_header"></span>
+                        <hr class="post_line">
+                        <div class="user_details target updown">
+
+                            <p class="post_content"></p>
+                            <p class="postlink">link</p>
+                            <hr class="post_line">
+                            <!-- from job details api  -->
+                            <!-- <div class="user_details target updown"> -->
+                            <h5 class="cent">General Information</h5>
+                            <p class="task"></p>
+                            <p class="job_details"></p>
+                            <!-- <button class="jobinfo">Job Info &#9660;</button> -->
+
+                        </div>
+                        <hr class="post_line">
+                        <!-- show details button  -->
+                        <button class="show_details">Details &#9660;</button>
+                        <hr class="post_line">
+
+                    </div>
+
+                </template>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <footer>
+        <!-- footer  -->
+        <p id="bottom">Campbell Swan S2327018</p>
+        <script src="script.js"></script>
+    </footer>
+</body>
