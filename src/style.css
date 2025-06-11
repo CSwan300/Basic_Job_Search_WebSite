@@ -5,7 +5,7 @@
 :root {
   /* Color Scheme - Using modern, accessible color palette */
   --primary: #4361ee;        /* Main brand color */
-  --primary-dark: darkgray;  /* Darker variant for hover states */
+  --primary-dark: purple;  /* Darker variant for hover states */
   --primary-light: #4895ef;  /* Lighter variant */
   --secondary: #f72585;      /* Accent color for important elements */
   --accent: #4cc9f0;        /* Secondary accent color */
