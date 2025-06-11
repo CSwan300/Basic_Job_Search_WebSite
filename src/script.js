@@ -69,9 +69,9 @@ function calchourpay(time, timepay) {
 
 function outputnormal(title, time, hours, tax, NI, gov, daysw) {
   // display the unedited values
-  document.getElementById("dtitle").innerHTML += " - £" + title;
-  document.getElementById("dtimef").innerHTML += " - £" + time;
-  document.getElementById("dhour").innerHTML += " - £" + hours;
+  document.getElementById("dtitle").innerHTML += " - " + title;
+  document.getElementById("dtimef").innerHTML += " - " + time;
+  document.getElementById("dhour").innerHTML += " - " + hours;
   document.getElementById("ddw").innerHTML += " " + daysw;
   document.getElementById("dpay").innerHTML += " - £" + timepay.value;
   document.getElementById("dtax").innerHTML += " - " + tax + "%";
