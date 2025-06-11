@@ -1,141 +1,142 @@
 /* ===== ROOT VARIABLES & GLOBAL STYLES ===== */
+
+/* CSS variables for consistent theming and easy maintenance */
+/*Updated 4 months after the project was initally completed (added to github at the end off year2 uni 3 months after creation) due to me attempting to learn more css */
 :root {
-  /* Color Scheme */
-  --primary: #4361ee;
-  --primary-dark: darkgray;
-  --primary-light: #4895ef;
-  --secondary: #f72585;
-  --accent: #4cc9f0;
-  --light: #f8f9fa;
-  --dark: #212529;
-  --gray: #6c757d;
-  --gray-light: #e9ecef;
-  --success: #4cc9f0;
-  --warning: #f8961e;
-  --danger: #ef233c;
+  /* Color Scheme - Using modern, accessible color palette */
+  --primary: #4361ee;        /* Main brand color */
+  --primary-dark: darkgray;  /* Darker variant for hover states */
+  --primary-light: #4895ef;  /* Lighter variant */
+  --secondary: #f72585;      /* Accent color for important elements */
+  --accent: #4cc9f0;        /* Secondary accent color */
+  --light: #f8f9fa;         /* Light background color */
+  --dark: #212529;          /* Dark text color */
+  --gray: #6c757d;          /* Neutral gray */
+  --gray-light: #e9ecef;    /* Light gray for borders */
+  --success: #4cc9f0;       /* Success state color */
+  --warning: #f8961e;       /* Warning state color */
+  --danger: #ef233c;        /* Error/danger state color */
   
-  /* Typography */
+  /* Typography - System fonts for performance with fallbacks */
   --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-size-base: 16px;
-  --line-height: 1.6;
+  --font-size-base: 16px;    /* Base font size for rem calculations */
+  --line-height: 1.6;        /* Comfortable reading line height */
   
-  /* Spacing */
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
+  /* Spacing - Consistent spacing system using rem units */
+  --space-sm: 0.5rem;       /* Small spacing */
+  --space-md: 1rem;         /* Medium spacing (base unit) */
+  --space-lg: 2rem;         /* Large spacing */
+  --space-xl: 3rem;         /* Extra large spacing */
   
-  /* Borders */
-  --border-radius: 0.5rem;
-  --border: 1px solid var(--gray-light);
+  /* Borders - Consistent border styling */
+  --border-radius: 0.5rem;  /* Rounded corners */
+  --border: 1px solid var(--gray-light); /* Standard border */
   
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
-  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+  /* Shadows - Subtle shadow hierarchy */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1); /* Small shadow */
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1); /* Medium shadow */
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1); /* Large shadow */
   
-  /* Transitions */
+  /* Transitions - Smooth hover/focus effects */
   --transition: all 0.3s ease;
 }
 
+/* Reset default browser styles for consistency */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* More predictable sizing */
 }
 
+/* Base body styles - Flex layout for sticky footer */
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
   line-height: var(--line-height);
   color: var(--dark);
   background-color: var(--light);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;        /* Full viewport height */
+  display: flex;            /* Flex layout */
+  flex-direction: column;   /* Stack children vertically */
 }
 
+/* Main content grows to push footer down */
 main {
   flex: 1;
 }
 
 /* ===== TYPOGRAPHY ===== */
+
+/* Heading hierarchy with consistent spacing */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-md);
-  color: var(--primary-dark);
-  line-height: 1.2;
+  color: var(--primary-dark); /* Darker color for better contrast */
+  line-height: 1.2;          /* Tighter line height for headings */
 }
 
-h1 {
-  font-size: 2.5rem;
-}
+/* Responsive heading sizes (adjusted in media queries) */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
+/* Paragraph spacing */
 p {
   margin-bottom: var(--space-md);
 }
 
+/* Link styling with hover effects */
 a {
   color: var(--primary);
-  text-decoration: none;
-  transition: var(--transition);
+  text-decoration: none;     /* Remove default underline */
+  transition: var(--transition); /* Smooth color transition */
 }
 
 a:hover {
   color: var(--primary-dark);
-  text-decoration: underline;
+  text-decoration: underline; /* Underline on hover for affordance */
 }
 
+/* Utility text classes */
 .text {
-  color: var(--gray);
+  color: var(--gray);        /* Secondary text color */
 }
 
 .cent {
-  text-align: center;
+  text-align: center;        /* Center-aligned text */
 }
 
 /* ===== LAYOUT & CONTAINERS ===== */
+
+/* Main content wrapper with max-width for readability */
 .wrapper {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-md);
+  max-width: 1200px;        /* Prevent content from stretching too wide */
+  margin: 0 auto;           /* Center horizontally */
+  padding: 0 var(--space-md); /* Side padding */
 }
 
+/* Spacing utility classes */
 .two, .three {
   margin-bottom: var(--space-lg);
 }
 
 /* ===== NAVIGATION ===== */
+
+/* Top navigation bar */
 .topnav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space out logo and nav items */
   align-items: center;
   background-color: var(--primary-dark);
   padding: var(--space-sm) var(--space-md);
-  box-shadow: var(--shadow-md);
-  position: relative;
+  box-shadow: var(--shadow-md); /* Subtle shadow for depth */
+  position: relative;       /* For positioning child elements */
 }
 
+/* Navigation buttons */
 .navbutton, .active {
   background-color: transparent;
   color: white;
@@ -148,47 +149,49 @@ a:hover {
 }
 
 .navbutton:hover, .active {
-  background-color: var(--primary);
+  background-color: var(--primary); /* Highlight on hover */
 }
 
 .active {
-  background-color: var(--secondary);
+  background-color: var(--secondary); /* Different color for active state */
 }
 
+/* Mobile menu button (hidden by default) */
 .openbtn {
-  display: none;
+  display: none;            /* Hidden on desktop */
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.5rem;       /* Larger tap target */
   cursor: pointer;
   padding: var(--space-sm);
 }
 
+/* Logo/image styling */
 .img1 {
-  height: 40px;
+  height: 40px;            /* Fixed height */
   margin-left: var(--space-md);
 }
 
-/* Sidepanel */
+/* ===== SIDEPANEL (MOBILE MENU) ===== */
 .sidepanel {
   height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1000;
+  width: 0;                /* Hidden by default */
+  position: fixed;         /* Overlay content */
+  z-index: 1000;           /* Ensure it's above other content */
   top: 0;
   left: 0;
   background-color: var(--dark);
-  overflow-x: hidden;
-  padding-top: var(--space-xl);
-  transition: var(--transition);
+  overflow-x: hidden;      /* Prevent horizontal scroll */
+  padding-top: var(--space-xl); /* Space for close button */
+  transition: var(--transition); /* Smooth opening/closing */
 }
 
 .sidepanel button {
   display: block;
   width: 100%;
   padding: var(--space-md) var(--space-lg);
-  text-align: left;
+  text-align: left;        /* Menu-style alignment */
   background: none;
   border: none;
   color: white;
@@ -198,14 +201,14 @@ a:hover {
 }
 
 .sidepanel button:hover {
-  background-color: var(--gray);
+  background-color: var(--gray); /* Hover feedback */
 }
 
 .sidepanel .closebtn {
   position: absolute;
   top: 0;
   right: var(--space-md);
-  font-size: 2rem;
+  font-size: 2rem;         /* Large close button */
   padding: var(--space-sm);
 }
 
@@ -214,32 +217,35 @@ form {
   background-color: white;
   padding: var(--space-md);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm); /* Subtle depth */
   margin-bottom: var(--space-lg);
 }
 
+/* Responsive form layout */
 .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;         /* Wrap on smaller screens */
   margin-bottom: var(--space-md);
 }
 
 .col-25 {
-  flex: 25%;
+  flex: 25%;              /* Label column */
   padding: var(--space-sm);
 }
 
 .col-75 {
-  flex: 75%;
+  flex: 75%;              /* Input column */
   padding: var(--space-sm);
 }
 
+/* Form label styling */
 .FormLabel {
   display: inline-block;
   margin-bottom: var(--space-sm);
   font-weight: bold;
 }
 
+/* Form input styling */
 input[type="text"],
 input[type="number"],
 select {
@@ -251,14 +257,16 @@ select {
   transition: var(--transition);
 }
 
+/* Focus states for accessibility */
 input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+  border-color: var(--primary); /* Highlight focused field */
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2); /* Accessible focus ring */
 }
 
+/* Button styles - consistent across all button types */
 button[type="submit"],
 button[type="button"],
 .submit, .btnvac, .tablink {
@@ -275,16 +283,17 @@ button[type="button"],
 button[type="submit"]:hover,
 button[type="button"]:hover,
 .submit:hover, .btnvac:hover, .tablink:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-dark); /* Darker on hover */
 }
 
-/* Tab system */
+/* ===== TAB SYSTEM ===== */
 .tabcontent {
-  display: none;
+  display: none;           /* Hidden by default */
   padding: var(--space-md) 0;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;  /* Smooth appearance */
 }
 
+/* Fade-in animation for tab content */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -296,12 +305,12 @@ button[type="button"]:hover,
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-md);
-  overflow: hidden;
+  overflow: hidden;        /* Contain child elements */
   transition: var(--transition);
 }
 
 .post:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md); /* Elevate on hover */
 }
 
 .post_header {
@@ -322,13 +331,13 @@ button[type="button"]:hover,
   margin: var(--space-sm) 0;
 }
 
+/* User details section - hidden by default */
 .user_details {
   padding: var(--space-md);
   display:none;
 }
 
 .show_details {
-  
   width: 100%;
   background-color: var(--gray-light);
   color: var(--dark);
@@ -348,68 +357,72 @@ footer {
 }
 
 /* ===== MEDIA QUERIES ===== */
+
+/* Tablet breakpoint */
 @media screen and (max-width: 768px) {
+  /* Stack form columns */
   .col-25, .col-75 {
     flex: 100%;
   }
   
+  /* Switch to mobile menu */
   .navbutton {
-    display: none;
+    display: none;          /* Hide desktop nav */
   }
   
   .openbtn {
-    display: block;
+    display: block;         /* Show mobile menu button */
   }
   
   .img1 {
-    margin-left: auto;
+    margin-left: auto;      /* Push logo to the right */
   }
 }
 
+/* Mobile breakpoint */
 @media screen and (max-width: 600px) {
+  /* Adjust base font size */
   :root {
     --font-size-base: 14px;
   }
   
-  h1 {
-    font-size: 2rem;
-  }
+  /* Smaller headings */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
   
-  h2 {
-    font-size: 1.75rem;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-  }
-  
+  /* Tighter spacing */
   .wrapper {
     padding: 0 var(--space-sm);
   }
   
+  /* Compact post styling */
   .post_header, .post_content, .user_details {
     padding: var(--space-sm);
   }
   
+  /* Smaller buttons */
   button, .navbutton, .submit, .btnvac, .tablink {
     padding: var(--space-sm) var(--space-sm);
   }
 }
 
-/* Utility classes */
+/* ===== UTILITY CLASSES ===== */
 .hidden {
-  display: none !important;
+  display: none !important; /* Force hide elements */
 }
 
+/* Arrow indicator for dropdowns */
 .updown::after {
-  content: " \25BC";
+  content: " \25BC";       /* Down arrow */
   font-size: 0.8em;
 }
 
 .target.updown::after {
-  content: " \25B2";
+  content: " \25B2";       /* Up arrow when active */
 }
 
+/* Card-like container */
 .box {
   background-color: white;
   padding: var(--space-md);
@@ -421,11 +434,13 @@ footer {
   margin-bottom: var(--space-lg);
 }
 
+/* List styling */
 ul {
   list-style-position: inside;
   margin-bottom: var(--space-md);
 }
 
+/* Horizontal rule */
 hr {
   border: none;
   border-top: var(--border);
