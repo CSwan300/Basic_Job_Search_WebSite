@@ -5,20 +5,6 @@ github.com
 github.com
 +1
 
-📌 Table of Contents
-Project Overview
-
-Features
-
-Technologies Used
-
-Getting Started
-
-Usage
-
-Contributing
-
-License
 
 📄 Project Overview
 This project was developed as part of a second-year coursework to explore JavaScript's capabilities in building interactive web applications. The website fetches job listings from an external API and displays them in a user-friendly interface.
