@@ -10,6 +10,7 @@ github.com
 This project was developed as part of a second-year coursework to explore JavaScript's capabilities in building interactive web applications. The website fetches job listings from an external API and displays them in a user-friendly interface.
 
 ✅ Features
+
 Job Search: Users can search for jobs by keywords.
 
 Job Listings: Displays a list of job titles, companies, and locations.
@@ -19,22 +20,18 @@ Job Details: Clicking on a job title provides more detailed information.
 Responsive Design: Optimized for both desktop and mobile views.
 
 ⚙️ Technologies Used
+
 HTML5
 
 CSS3
 
 JavaScript
-
-Job Search API
-github.com
-+6
-github.com
-+6
 Lmiforall job vacancies api
+
 🚀 Getting Started
 Prerequisites
-No special prerequisites are required. Ensure you have a modern web browser installed.
-github.com
+No special prerequisites are required. Ensure you have a modern web browser installed works best on a local server.
+
 
 Installation
 Clone the repository:
