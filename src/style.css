@@ -1,639 +1,433 @@
-/* root for the page colours */
+/* ===== ROOT VARIABLES & GLOBAL STYLES ===== */
 :root {
-  --primary-color: darkgray; /* define a primary colour as var(--primary-color) */
-  --secondary-color: lightgray; /* define a secondary colour as var(--secondary-color) */
-  ----tertiary-color:gray;  /* defines a third colour as var(--tertiary-color) */
-  --forth-color:white;/* defines a forth colour as var(--forth-color)  */
-  --text-color:black;/* creates a text colour  */
+  /* Color Scheme */
+  --primary: #4361ee;
+  --primary-dark: darkgray;
+  --primary-light: #4895ef;
+  --secondary: #f72585;
+  --accent: #4cc9f0;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --gray-light: #e9ecef;
+  --success: #4cc9f0;
+  --warning: #f8961e;
+  --danger: #ef233c;
+  
+  /* Typography */
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-size-base: 16px;
+  --line-height: 1.6;
+  
+  /* Spacing */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  
+  /* Borders */
+  --border-radius: 0.5rem;
+  --border: 1px solid var(--gray-light);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* css for the general website proper  */
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--dark);
+  background-color: var(--light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
-  background-color: var(--secondary-color);
-  font-family: Arial, Helvetica, sans-serif;
+  flex: 1;
 }
 
-
-/* finds if the wrapper is outside a div and adds padding and a radius  */
-.wrapper>div {
-  border-radius: 5px;
-  padding: 1em;
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--space-md);
+  color: var(--primary-dark);
+  line-height: 1.2;
 }
 
-/* creates a wrapper for the grid  */
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  max-width: 940px;
-  margin: 0 auto;
-}
-
-/* creates different grid spaces S */
-.one {
-  grid-column: 1;
-  grid-row: 1;
-  background-color: var(--secondary-color);
-
-}
-
-.two {
-  grid-column: 1 / 4;
-  grid-row: 1 / 3;
-}
-
-.three {
-  grid-column: 1 / 5;
-  grid-row: 2 / 5;
-  background-color: var(--primary-color);
-  height: auto;
-}
-
-/* general layout for some boxs  */
-.div1 {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-/* css for the h1 header to make it more distincitve  */
 h1 {
-  font-family: arial;
-  font-weight: 600;
-  background-image: linear-gradient(to left, black ,darkblue);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-align: center;
-  padding: 2vw;
-  padding-top: 3vw;
-  font-size: 3em;
+  font-size: 2.5rem;
 }
 
-/* sets the css for the header */
-header {
-
-  padding:2px;
-  width: auto;
-  height: auto;
-  position: inherit;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* sets the colour of any lines in the website  */
-hr {
-  border: 1.5px solid var(--text-color);
-}
-
-/* css setting the size of the paragraph text  */
-p {
-  font-size: 1em;
-}
-
-/* creates a box  */
-.box {
-  width: auto;
-  height: auto;
-  border: 0.75px solid var(--tertiary-color);
-  padding: 4vw;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--text-color);
-
-}
-
-/* css for the website itself  */
-body,
-html {
-  height: 100%;
-  background-color: var(--secondary-color);
-  padding:2px;
-}
-
-
-/* to set and display the headers boldly (except h1 and h4 which are set different) */
-h2,
-h3 {
-  font-family: arial;
-  font-weight: 600;
-  color: var(--text-color);
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-align: center;
-  font-size: 3vw;
+h2 {
+  font-size: 2rem;
 }
 
 h3 {
-  width: auto;
-  max-width: 100%;
+  font-size: 1.75rem;
 }
 
-/* sets the size of the text  */
-.text {
- font-size: 1em;
-}
-
-/* css for the image  */
-.img1 {
-  max-width: 5em;
-  height: auto;
-  width: auto;
-  float: right;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* sets the background colour off the footer  */
-footer {
-  background-color: var(--primary-color);
-}
-
-
-/* The sidepanel menu */
-.sidepanel {
-  height: 200px;
-  /* Specify a height */
-  width: 0;
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  left: 0;
-
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 10px;
-  /* Place content 10px from the top */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidepanel */
-}
-
-/* The sidepanel links */
-.sidepanel button {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 15px;
-  color: var(--text-color);
-  display: block;
-  transition: 0.3s;
-  width: 200px;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidepanel button:hover {
-  color: var(#444);
-}
-
-/* Position and style the close button (top right corner) */
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-
-
-/* Style inputs, select elements and textareas */
-input[type=text],
-select,
-textarea {
-  padding: 10px;
-  width: 75%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-/* Style the label to display next to the inputs */
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-/* Style the submit button */
-.submit {
-  background-color: var(--text-color);
-  color: var(--forth-color);
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-}
-
-/* for when the user hovers over the submit button  */
-.submit:hover {
-  background-color:rgb(58, 65, 60);
-}
-
-/* Style the container */
-.container {
-  background-color: var(--forth-color);
-  padding: 20px;
-}
-
-/* Floating column for labels: 25% width */
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-/* Floating column for inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 100%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-/* for the number options in the form  */
-.num {
-  padding: 10px;
-  width: 75%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
-
-/* for the links in the tab  */
-.tablink {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding:2px;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-  font-size: 1.75vw;
-  
-  width: 100%;
-  
-}
-/* css for the labels of the forms  */
-.FormLabel{
-  font-size:1em;
-
-}
-/* for when the user hovers over the tab  */
-.tablink:hover {
-  background-color: var(#444);
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: var(--text-color);
-  display: none;
-  padding: 100px 20px;
-  height: auto;
-  width: auto;
-}
-
-/* background for the form  */
-#Form {
-  background-color: var(--primary-color);
-}
-
-/* for unentered values in the form  */
-input:invalid:required {
-  border: 1px dashed red
-}
-
-select:invalid:required {
-  border: 1px dashed red
-}
-
-input:valid:required {
-  border: 1px dashed green
-}
-
-select:valid:required {
-  border: 1px dashed green
-}
-
-/* for the page description */
-.div2 {
-  
-  background-color: var(--primary-color);
-  text-align: center;
-  padding-top: 0.5vw;
-  padding-bottom: 0.1vw;
-  width: auto;
-  max-height: 6vw;
-  font-size: 1.75vw;
-  width: 100%;
-  padding:2px;
-}
-
-/* sets the font and size of h4  */
 h4 {
-  text-align: center;
-  font-size: 2em;
-  font-family: arial;
+  font-size: 1.5rem;
 }
 
-/* general css for the a tag  */
-.a1 {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  cursor: pointer;
-  font-size: 1em;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: block;
+h5 {
+  font-size: 1.25rem;
 }
 
-/* css for vacancies page only  */
-/* sets a unique line under each post  */
-
-div.post:nth-child(odd) {
-  background-color: var(--secondary-color);
-
+h6 {
+  font-size: 1rem;
 }
 
-div.post:nth-child(even) {
-  background-color: rgb(185, 178, 178);
+p {
+  margin-bottom: var(--space-md);
 }
 
-div.post {
-  border-radius: 10px;
-  padding: 0.5em 0.5em 0.0em 0.5em;
-  margin-bottom: 0.5em;
-  box-shadow: 0 0 0.1em var(--secondary-color);
-
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-div.post:hover {
-  box-shadow: 0 0 0.3em var(--tertiary-color);
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
 }
 
-span.post_header {
-  font-size: 1.25em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-button.show_details {
-  font-size: 1.25em;
-  border-radius: 0.25em;
-  border-color: black;
-  padding: 0.25em;
-  margin: 0.25em 0em 0.25em 0em;
-  cursor: pointer;
-  background-color: white;
-  text-align: center;
-  font-weight: lighter;
-  border: none;
-  color: var(--font-color);
-  position: relative;
-  justify-content: center;
-  left: 45%;
-
-}
-
-button.show_details:active {
-  background-color: rgb(90, 153, 153);
-}
-
-
-hr.post_line {
-  margin-top: 0.125em;
-  margin-bottom: 0.125em;
-  border: 0;
-}
-
-p.post_content {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1em;
-  line-height: 1.5;
-  text-align: center;
-}
-
-hr.post_line {
-  margin-top: 0.125em;
-  margin-bottom: 0.125em;
-  border: 0;
-  border-top: 1px solid var(--tertiary-color);
-}
-
-span.user_id {
-  display: none;
-}
-
-div.user_details {
-  display: none;
-}
-
-
-/* for the slider used in thedistence for the form*/
-
-/* The slider itself */
-.slider {
-  -webkit-appearance: none;
-  /* Override default CSS styles */
-  appearance: none;
-  width: 100%;
-  /* Full-width */
-  height: 25px;
-  /* Specified height */
-  background: #d3d3d3;
-  /* Grey background */
-  outline: none;
-  /* Remove outline */
-  opacity: 0.7;
-  /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s;
-  /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-}
-
-/* Mouse-over effects */
-.slider:hover {
-  opacity: 1;
-  /* Fully shown on mouse-over */
-}
-
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  /* Override default look */
-  appearance: none;
-  width: 25px;
-  /* Set a specific slider handle width */
-  height: 25px;
-  /* Slider handle height */
-  background: var(--text-color);
-  /* var(--text-color) background */
-  cursor: pointer;
-  /* Cursor on hover */
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  /* Set a specific slider handle width */
-  height: 25px;
-  /* Slider handle height */
-  background: var(--primary-color);
-  /* var(--primary-color) background */
-  cursor: pointer;
-  /* Cursor on hover */
+.text {
+  color: var(--gray);
 }
 
 .cent {
-  /* centers text  */
   text-align: center;
-  font-size: 1em;
 }
 
-.btnvac {
-  background-color: var(--text-color);
-  color: var(--forth-color);
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  
-
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
+/* ===== LAYOUT & CONTAINERS ===== */
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
 }
 
-.btnvac:hover {
-  background-color: #444;
+.two, .three {
+  margin-bottom: var(--space-lg);
 }
 
-.post_task {
-  display: none;
-}
-
+/* ===== NAVIGATION ===== */
 .topnav {
-  background-color: rgb(161, 171, 179);
-  overflow: hidden;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-dark);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: var(--shadow-md);
+  position: relative;
 }
 
-/* Style the links inside the navigation bar */
-.topnav .navbutton {
-  float: left;
-  display: block;
-  color: var(--text-color);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav button:hover {
-  background-color: #ddd;
-  color: var(--text-color);
-}
-
-/* Add an active class to highlight the current page */
-.active {
-  float: left;
-  display: block;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-
-/* Style the button that is used to open the sidepanel */
-.openbtn {
-  float: right;
-  display: none;
+.navbutton, .active {
   background-color: transparent;
-  color: var(--text-color);
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
 }
 
-.topnav .openbtn:hover {
-  background-color: var(--forth-color);
+.navbutton:hover, .active {
+  background-color: var(--primary);
 }
-/* for the link in vacancies */
-.postlink{
+
+.active {
+  background-color: var(--secondary);
+}
+
+.openbtn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+
+.img1 {
+  height: 40px;
+  margin-left: var(--space-md);
+}
+
+/* Sidepanel */
+.sidepanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: var(--dark);
+  overflow-x: hidden;
+  padding-top: var(--space-xl);
+  transition: var(--transition);
+}
+
+.sidepanel button {
+  display: block;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sidepanel button:hover {
+  background-color: var(--gray);
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: var(--space-md);
+  font-size: 2rem;
+  padding: var(--space-sm);
+}
+
+/* ===== FORMS ===== */
+form {
+  background-color: white;
+  padding: var(--space-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.col-25 {
+  flex: 25%;
+  padding: var(--space-sm);
+}
+
+.col-75 {
+  flex: 75%;
+  padding: var(--space-sm);
+}
+
+.FormLabel {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: var(--space-sm);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+button[type="submit"],
+button[type="button"],
+.submit, .btnvac, .tablink {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover,
+.submit:hover, .btnvac:hover, .tablink:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Tab system */
+.tabcontent {
+  display: none;
+  padding: var(--space-md) 0;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== POST/VACANCY STYLES ===== */
+.post {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.post:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.post_header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: block;
+  padding: var(--space-md);
+  color: var(--primary-dark);
+}
+
+.post_content {
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+.post_line {
+  border: none;
+  border-top: var(--border);
+  margin: var(--space-sm) 0;
+}
+
+.user_details {
+  padding: var(--space-md);
+  display:none;
+}
+
+.show_details {
   
-  text-align: center;
+  width: 100%;
+  background-color: var(--gray-light);
+  color: var(--dark);
 }
-/* media querys  */
-/* Responsive layout - when the screen is less than 600px wide, make the two form columns stack on top of each other instead of next to each other */
-/* remove and display some items  */
-/* edit font sizes and general sizes of boxs and move some items around */
-@media screen and (max-width: 600px) {
-  .topnav .navbutton {
+
+.show_details:hover {
+  background-color: var(--gray);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--dark);
+  color: white;
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 768px) {
+  .col-25, .col-75 {
+    flex: 100%;
+  }
+  
+  .navbutton {
     display: none;
   }
-/* stacks the form  */
-  .col-25,
-  .col-75,
-  input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-/* removes and shows buttons  */
-  .active {
-    display: none;
-
-  }
-
+  
   .openbtn {
     display: block;
   }
-/* sends the image left  */
+  
   .img1 {
-    float: left
+    margin-left: auto;
   }
-/* increases the size of the div  */
-  .div2 {
-    height: 100px;
-    width: 200px;
-    font-size: 0.75em;
-  }
-/* sends the links left  */
-  .a1 {
-    justify-content: left;
-    text-align: left;
-  }
-  /* changes the size of the tabs for readability  */
-  .tablink{
-  font-size:10px;
 }
-footer{
-  /* styles the footer ; */
-  padding: top 2px;
-  padding: bottom 2px;
-  font-size:10px;
-};
+
+@media screen and (max-width: 600px) {
+  :root {
+    --font-size-base: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .wrapper {
+    padding: 0 var(--space-sm);
+  }
+  
+  .post_header, .post_content, .user_details {
+    padding: var(--space-sm);
+  }
+  
+  button, .navbutton, .submit, .btnvac, .tablink {
+    padding: var(--space-sm) var(--space-sm);
+  }
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+
+.updown::after {
+  content: " \25BC";
+  font-size: 0.8em;
+}
+
+.target.updown::after {
+  content: " \25B2";
+}
+
+.box {
+  background-color: white;
+  padding: var(--space-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.div1 {
+  margin-bottom: var(--space-lg);
+}
+
+ul {
+  list-style-position: inside;
+  margin-bottom: var(--space-md);
+}
+
+hr {
+  border: none;
+  border-top: var(--border);
+  margin: var(--space-md) 0;
 }
