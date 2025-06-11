@@ -5,7 +5,7 @@
 :root {
   /* Color Scheme - Using modern, accessible color palette */
   --primary: #4361ee;        /* Main brand color */
-  --primary-dark: purple;  /* Darker variant for hover states */
+  --dark: rgb(19, 13, 18);  /* Darker variant for hover states */
   --primary-light: #4895ef;  /* Lighter variant */
   --secondary: #f72585;      /* Accent color for important elements */
   --accent: #4cc9f0;        /* Secondary accent color */
@@ -18,7 +18,7 @@
   --danger: #ef233c;        /* Error/danger state color */
   
   /* Typography - System fonts for performance with fallbacks */
-  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-main: 'Segoe UI', system-ui;
   --font-size-base: 16px;    /* Base font size for rem calculations */
   --line-height: 1.6;        /* Comfortable reading line height */
   
@@ -70,7 +70,7 @@ main {
 /* Heading hierarchy with consistent spacing */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-md);
-  color: var(--primary-dark); /* Darker color for better contrast */
+  color: var(--dark); /* Darker color for better contrast */
   line-height: 1.2;          /* Tighter line height for headings */
 }
 
@@ -88,16 +88,26 @@ p {
 }
 
 /* Link styling with hover effects */
-a {
-  color: var(--primary);
-  text-decoration: none;     /* Remove default underline */
-  transition: var(--transition); /* Smooth color transition */
+
+a.text {
+  color: var(--secondary);        /* Use the accent color for prominence */
+  text-decoration: underline;     /* Underlined by default */
+  font-weight: 600;               /* Slightly bolder */
+  background-color: rgba(247, 37, 133, 0.1); /* Light tinted background */
+  padding: 0.2rem 0.4rem;         /* Small padding for a "button-like" feel */
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  display: inline-block;          /* So padding and background apply nicely */
 }
 
-a:hover {
-  color: var(--primary-dark);
-  text-decoration: underline; /* Underline on hover for affordance */
+a.text:hover, a.text:focus {
+  color: var(--primary-light);    /* Change color on hover/focus */
+  background-color: rgba(67, 97, 238, 0.15); /* Subtle blue highlight */
+  text-decoration: none;          /* Remove underline on hover for style */
+  outline: none;
+  cursor: pointer;
 }
+
 
 /* Utility text classes */
 .text {
@@ -130,7 +140,7 @@ a:hover {
   display: flex;
   justify-content: space-between; /* Space out logo and nav items */
   align-items: center;
-  background-color: var(--primary-dark);
+  background-color: var(--dark);
   padding: var(--space-sm) var(--space-md);
   box-shadow: var(--shadow-md); /* Subtle shadow for depth */
   position: relative;       /* For positioning child elements */
@@ -139,7 +149,7 @@ a:hover {
 /* Navigation buttons */
 .navbutton, .active {
   background-color: transparent;
-  color: white;
+  color: var(--light);
   border: none;
   padding: var(--space-sm) var(--space-md);
   cursor: pointer;
@@ -161,7 +171,7 @@ a:hover {
   display: none;            /* Hidden on desktop */
   background: none;
   border: none;
-  color: white;
+  color: var(--light);
   font-size: 1.5rem;       /* Larger tap target */
   cursor: pointer;
   padding: var(--space-sm);
@@ -194,7 +204,7 @@ a:hover {
   text-align: left;        /* Menu-style alignment */
   background: none;
   border: none;
-  color: white;
+  color: var(--light);
   font-size: 1rem;
   cursor: pointer;
   transition: var(--transition);
@@ -214,7 +224,7 @@ a:hover {
 
 /* ===== FORMS ===== */
 form {
-  background-color: white;
+  background-color: var(--light);
   padding: var(--space-md);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm); /* Subtle depth */
@@ -271,7 +281,7 @@ button[type="submit"],
 button[type="button"],
 .submit, .btnvac, .tablink {
   background-color: var(--primary);
-  color: white;
+  color: var(--light);
   border: none;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--border-radius);
@@ -283,7 +293,7 @@ button[type="button"],
 button[type="submit"]:hover,
 button[type="button"]:hover,
 .submit:hover, .btnvac:hover, .tablink:hover {
-  background-color: var(--primary-dark); /* Darker on hover */
+  background-color: var(--dark); /* Darker on hover */
 }
 
 /* ===== TAB SYSTEM ===== */
@@ -301,7 +311,7 @@ button[type="button"]:hover,
 
 /* ===== POST/VACANCY STYLES ===== */
 .post {
-  background-color: white;
+  background-color: var(--light);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-md);
@@ -318,7 +328,7 @@ button[type="button"]:hover,
   font-weight: bold;
   display: block;
   padding: var(--space-md);
-  color: var(--primary-dark);
+  color: var(--dark);
 }
 
 .post_content {
@@ -350,7 +360,7 @@ button[type="button"]:hover,
 /* ===== FOOTER ===== */
 footer {
   background-color: var(--dark);
-  color: white;
+  color: var(--light);
   text-align: center;
   padding: var(--space-md);
   margin-top: var(--space-lg);
@@ -424,7 +434,7 @@ footer {
 
 /* Card-like container */
 .box {
-  background-color: white;
+  background-color: var(--light);
   padding: var(--space-md);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
