@@ -1,8 +1,12 @@
+//This was my first time ever properly using javascript i apologise for everything :)
 // Global Variables
 let title = "N/A";
-var detailsArray = ["", "", "", "", "", "", "", "", "", ""];
-var tasksArray = ["", "", "", "", "", "", "", "", "", ""];
-var locArray = ["", "", "", "", "", "", "", "", "", ""];
+// Changed how the arrays were decalred and set to 10 (since it only shows the top 10 listings)
+const arrayLength = 10;
+const detailsArray = new Array(arrayLength).fill("");
+const tasksArray = new Array(arrayLength).fill("");
+const locArray = new Array(arrayLength).fill("");
+
 // Global APIs
 
 let vacURL = "https:///api.lmiforall.org.uk/api/v1/vacancies/search";
@@ -65,9 +69,9 @@ function calchourpay(time, timepay) {
 
 function outputnormal(title, time, hours, tax, NI, gov, daysw) {
   // display the unedited values
-  document.getElementById("dtitle").innerHTML += " - " + title;
-  document.getElementById("dtimef").innerHTML += " - " + time;
-  document.getElementById("dhour").innerHTML += " - " + hours;
+  document.getElementById("dtitle").innerHTML += " - £" + title;
+  document.getElementById("dtimef").innerHTML += " - £" + time;
+  document.getElementById("dhour").innerHTML += " - £" + hours;
   document.getElementById("ddw").innerHTML += " " + daysw;
   document.getElementById("dpay").innerHTML += " - £" + timepay.value;
   document.getElementById("dtax").innerHTML += " - " + tax + "%";
@@ -84,23 +88,24 @@ function outputcalc(hours, tax, NI, hourpay, daysw) {
   // calculates gross hourly pay
   let taxed = hourpay - tax / 100;
   let NI2 = hourpay - NI / 100;
-  ghp = hourpay - NI2 - taxed;
-
+  //sets absolute to remove negatives
+  let ghp = Math.abs(hourpay - NI2 - taxed);
+ 
   document.getElementById("dtitlef").innerHTML += " - " + title;
-  document.getElementById("dhourp").innerHTML += " - " + ghp.toFixed(2);
+  document.getElementById("dhourp").innerHTML += " - £" + ghp.toFixed(2);
   document.getElementById("ddayp").innerHTML +=
-    " - " + ((ghp * hours) / daysw).toFixed(2);
+    " - £" + ((ghp * hours) / daysw).toFixed(2);
   document.getElementById("dweekp").innerHTML +=
-    " - " + (ghp * hours).toFixed(2);
+    " - £" + (ghp * hours).toFixed(2);
   // added as some jobs pay in 2 week increments
   document.getElementById("dfortp").innerHTML +=
-    " - " + (ghp * hours * 2).toFixed(2);
+    " - £" + (ghp * hours * 2).toFixed(2);
   // used 30.41 as thats the average off all months added together / 12
   document.getElementById("monthpay").innerHTML +=
-    " - " + (ghp * hours * 30.41).toFixed(2);
+    " - £" + (ghp * hours * 30.41).toFixed(2);
 
   document.getElementById("dyearp").innerHTML +=
-    " - " + (ghp * hours * 356).toFixed(2);
+    " - £" + (ghp * hours * 356).toFixed(2);
 }
 
 
