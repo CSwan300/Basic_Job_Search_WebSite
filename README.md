@@ -2,7 +2,7 @@ Basic Job Search Website
 A simple web application designed to help users search for job listings using JavaScript. This project serves as an introduction to integrating APIs and displaying dynamic content on a webpage.
 
 📄 Project Overview
-This project was developed as part of a second-year coursework to explore JavaScript's capabilities in building interactive web applications. The website fetches job listings from an external API and displays them in a user-friendly interface.
+This project was developed to explore JavaScript's capabilities in building interactive web applications. The website fetches job listings from an external API and displays them in a user-friendly interface.
 
 ✅ Features
 
