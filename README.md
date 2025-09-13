@@ -39,11 +39,6 @@ Edit
 git clone https://github.com/CSwan300/Basic_Job_Search_WebSite.git
 Navigate into the project directory:
 
-bash
-Copy
-Edit
-cd Basic_Job_Search_WebSite
-Open the index.html file in your preferred web browser to view the application.
 
 🖥️ Usage
 Upon opening the application, users can enter a job keyword into the search bar. The website will then display a list of job postings matching the search criteria. Clicking on a job title will reveal more detailed information about the position.
